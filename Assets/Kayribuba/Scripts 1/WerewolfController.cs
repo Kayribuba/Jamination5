@@ -34,7 +34,7 @@ public class WerewolfController : MonoBehaviour
     float attackUntill = float.MinValue;
 
     int score = 0;
-    bool editorModeIsOn;
+    public bool editorModeIsOn;
 
     void Start()
     {
