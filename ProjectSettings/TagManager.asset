@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - Fatal
   - Ground
+  - SlimEnemy
+  - ThickEnemy
   layers:
   - Default
   - TransparentFX

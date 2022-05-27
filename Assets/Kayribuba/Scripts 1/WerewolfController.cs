@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WerewolfController : MonoBehaviour
 {
@@ -12,11 +13,14 @@ public class WerewolfController : MonoBehaviour
     [SerializeField] float fallingAccelerationIntensity = 5f;
     [SerializeField] float playerAttackDistance = 1f;
     [SerializeField] float attackRadius = .7f;
+    [SerializeField] float attackDuration = .2f;
+    [SerializeField] float attackCoolDown = .2f;
     [SerializeField] LayerMask EnemyLayer;
     [SerializeField] LayerMask GroundLayers;
     [SerializeField] Transform GroundCheck;
     [SerializeField] Transform attackPoint;
     [SerializeField] Transform corePoint;
+    [SerializeField] TextMeshProUGUI ScoreText;
     
     Rigidbody2D rb;
     Animator animator;
@@ -25,23 +29,30 @@ public class WerewolfController : MonoBehaviour
     float defaultGravityScale;
     float coyoteTime;
     float coyoteJump = -1;
+    float targetAttackTime = float.MinValue;
+    float attackUntill = float.MinValue;
+
+    int score = 0;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         defaultGravityScale = rb.gravityScale;
     }
     void Update()
     {
         mx = Input.GetAxis("Horizontal");
-        animator.SetFloat("Movement", Mathf.Abs(mx));
+        //animator.SetFloat("Movement", Mathf.Abs(mx));
 
         CheckFlipNeed();
+
+        rb.velocity = new Vector2(mx * playerSpeed, rb.velocity.y);
 
         GroundCheckMethod();
         JumpCheck();
         Attack();
+        DamageThings();
     }
 
     private void GroundCheckMethod()
@@ -50,7 +61,7 @@ public class WerewolfController : MonoBehaviour
         {
             isGrounded = true;
             coyoteTime = Time.time + 0.05f;
-            animator.SetTrigger("Grounded");
+            //animator.SetTrigger("Grounded");
         }
         else if (coyoteTime >= Time.time)
         {
@@ -70,7 +81,7 @@ public class WerewolfController : MonoBehaviour
         {
             coyoteJump = -1;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            animator.SetTrigger("Jumped");
+            //animator.SetTrigger("Jumped");
         }
         else if (rb.velocity.y > 0 && Input.GetButtonUp("Jump"))
         {
@@ -88,53 +99,49 @@ public class WerewolfController : MonoBehaviour
     }
     void Attack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && targetAttackTime <= Time.time)
         {
-            if (Mathf.Abs(mx) > 0.01 && IsMouseBehindTheCharacter())
-                return;
+            //animator.SetTrigger("Attack");
+            //attackPoint.GetComponent<Animator>().SetTrigger("Slash");
 
-            SetAttackPosition();
-
-            animator.SetTrigger("Attack");
-            attackPoint.GetComponent<Animator>().SetTrigger("Slash");
-
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, EnemyLayer);
-            foreach (Collider2D hit in hitEnemies)
-            {
-                //atak :)
-            }
-            hitEnemies = null;
+            targetAttackTime = Time.time + attackCoolDown;
+            attackUntill = Time.time + attackDuration;
         }
     }
-    void SetAttackPosition()
+    void DamageThings()
     {
-        Vector2 desiredPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (attackUntill <= Time.time)
+            return;
 
-        if (!isFacingLeft && desiredPosition.x < corePoint.position.x)
-            Flip();
-        else if (isFacingLeft && desiredPosition.x > corePoint.position.x)
-            Flip();
+        //Debug.Log("ATTAAACK");
 
-        Vector2 direction = desiredPosition - new Vector2(corePoint.position.x, corePoint.position.y);
-        direction.Normalize();
-        desiredPosition = new Vector2(corePoint.position.x, corePoint.position.y) + direction * playerAttackDistance;
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, EnemyLayer);
+        foreach (Collider2D enemyCol in hitEnemies)
+        {
+            if (enemyCol.GetComponent<PreyScript>() == null)
+            {
+                Debug.Log("Enemy has no PreyScript :(");
+                break;
+            }
 
-        attackPoint.position = new Vector3(desiredPosition.x, desiredPosition.y, 0);
+            enemyCol.GetComponent<PreyScript>().Die();
 
-        Vector2 rotationVector = attackPoint.position - corePoint.position;
-        if (!isFacingLeft)
-            attackPoint.rotation = Quaternion.Euler(0, 0, Vector2.Angle(rotationVector, Vector2.down) - 90);
-        else
-            attackPoint.rotation = Quaternion.Euler(0, 0, Vector2.Angle(rotationVector, Vector2.up) - 90);
+            if (enemyCol.CompareTag(Constants.SlimEnemyTag))
+            {
+                score++;
+            }
+            else if (enemyCol.CompareTag(Constants.ThickEnemyTag))
+            {
+                score += 2;
+            }
+
+            RefreshScore();
+        }
+        hitEnemies = null;
     }
-    bool IsMouseBehindTheCharacter()
+    void RefreshScore()
     {
-        if (!isFacingLeft && Camera.main.ScreenToWorldPoint(Input.mousePosition).x < corePoint.position.x)
-            return true;
-        else if (isFacingLeft && Camera.main.ScreenToWorldPoint(Input.mousePosition).x > corePoint.position.x)
-            return true;
-        else
-            return false;
+        ScoreText.text = score.ToString();
     }
     private void CheckFlipNeed()
     {
