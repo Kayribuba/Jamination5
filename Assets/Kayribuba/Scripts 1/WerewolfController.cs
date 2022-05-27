@@ -21,6 +21,7 @@ public class WerewolfController : MonoBehaviour
     [SerializeField] Transform attackPoint;
     [SerializeField] Transform corePoint;
     [SerializeField] TextMeshProUGUI ScoreText;
+    [SerializeField] TextMeshProUGUI EditText;
     
     Rigidbody2D rb;
     Animator animator;
@@ -33,6 +34,7 @@ public class WerewolfController : MonoBehaviour
     float attackUntill = float.MinValue;
 
     int score = 0;
+    bool editorModeIsOn;
 
     void Start()
     {
@@ -42,7 +44,7 @@ public class WerewolfController : MonoBehaviour
     }
     void Update()
     {
-        mx = Input.GetAxis("Horizontal");
+        mx = Input.GetAxisRaw("Horizontal");
         //animator.SetFloat("Movement", Mathf.Abs(mx));
 
         CheckFlipNeed();
@@ -53,6 +55,23 @@ public class WerewolfController : MonoBehaviour
         JumpCheck();
         Attack();
         DamageThings();
+
+        EditorMode();
+    }
+
+    void EditorMode()
+    {
+        if (Input.GetKey(KeyCode.O) && Input.GetKey(KeyCode.P) && Input.GetKey(KeyCode.M) && !editorModeIsOn)
+        {
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+            editorModeIsOn = true;
+            EditText.gameObject.SetActive(true);
+        }
+
+        if(Input.GetKeyDown(KeyCode.R) && editorModeIsOn)
+        {
+            FindObjectOfType<GameManagerScript>().ReloadLevel();
+        }
     }
 
     private void GroundCheckMethod()
