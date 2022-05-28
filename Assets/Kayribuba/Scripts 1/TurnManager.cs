@@ -34,6 +34,7 @@ public class TurnManager : MonoBehaviour
         wDrag.enabled = false;
         DL.enabled = false;
         LR.enabled = false;
+        GetComponent<Rigidbody2D>().drag = 0;
     }
     public void ChangeType()
     {

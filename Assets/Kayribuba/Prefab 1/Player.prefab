@@ -54,6 +54,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0765f49a38309b04781d5e790e9c8ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isWerewolf: 0
+  wwController: {fileID: 5099180700587954269}
+  wDrag: {fileID: 5099180702072121860}
+  DL: {fileID: 5099180702072121861}
+  LR: {fileID: 5099180702072121859}
 --- !u!114 &5099180700587954269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +66,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5099180700587954267}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1c9d59d1f0863c42a452d8c409ff44b, type: 3}
   m_Name: 
@@ -146,7 +151,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5099180700587954267}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -251,7 +256,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5099180700587954267}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39c6fee7d9e932340ba5cdbc6affb73e, type: 3}
   m_Name: 

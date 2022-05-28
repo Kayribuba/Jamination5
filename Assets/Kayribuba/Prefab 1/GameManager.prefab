@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EditText: {fileID: 0}
+  editorModeIsOn: 1
 --- !u!82 &606096432
 AudioSource:
   m_ObjectHideFlags: 0
