@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c9d59d1f0863c42a452d8c409ff44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 0}
   playerSpeed: 15
   jumpForce: 35
   fallingAccelerationIntensity: 5
