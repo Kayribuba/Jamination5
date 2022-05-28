@@ -37,7 +37,7 @@ public class WerewolfController : MonoBehaviour
     float targetAttackTime = float.MinValue;
     float attackUntill = float.MinValue;
     
-    public float maxScore = 5;
+    public float maxScore = 12;
     float minScore = 0;
     float score = 0;
     
@@ -47,13 +47,14 @@ public class WerewolfController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
         defaultGravityScale = rb.gravityScale;
-
+        kb.SetActive(true);
 
         score = minScore;
         slider.value = score;
     }
     void Update()
     {
+        kb.SetActive(true);
         mx = Input.GetAxisRaw("Horizontal");
         //animator.SetFloat("Movement", Mathf.Abs(mx));
 
@@ -159,6 +160,10 @@ public class WerewolfController : MonoBehaviour
                 GetComponent<TurnManager>().BecomeWerewolf();
                 slider.value = minScore;
                 kb.SetActive(false);
+            }
+            else
+            {
+                kb.SetActive(true);
             }
         }
         hitEnemies = null;

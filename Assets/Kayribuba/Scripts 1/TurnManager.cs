@@ -14,7 +14,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField] DragLine DL;
     [SerializeField] LineRenderer LR;
 
-    public float maxTime = 6;
+    public float maxTime = 1;
 
     void Update()
     {
@@ -56,10 +56,15 @@ public class TurnManager : MonoBehaviour
 
     void DecreaseBar()
     {
-        if (isWerewolf)
+        if (isWerewolf && slider.value > 0)
         {
             wb.SetActive(true);
             slider.value -= 1 / maxTime * Time.deltaTime;
+        }
+        else
+        {
+            BecomeHuman();
+            wb.SetActive(false);
         }
       
     }
