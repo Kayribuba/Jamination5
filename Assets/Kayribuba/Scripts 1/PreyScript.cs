@@ -19,6 +19,10 @@ public class PreyScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (Random.Range(0, 2) <= 1)
+            currentState = PreyState.Idle;
+        else
+            currentState = PreyState.Walk;
     }
     void Update()
     {
@@ -57,16 +61,32 @@ public class PreyScript : MonoBehaviour
     {
         if(currentState == PreyState.Idle)
         {
-
+            rb.velocity = Vector2.zero;
         }
         else if (currentState == PreyState.Walk)
         {
-            rb.velocity = speed * transform.forward;
-            if (Physics2D.OverlapCircle(edgeCheck.position, edgeCheckRadius, GroundLayers))
-            {
+            Vector2 forwardVector = GetForwardVector2();
 
+            rb.velocity = new Vector2(forwardVector.x * speed, rb.velocity.y);
+
+            if (!Physics2D.OverlapCircle(edgeCheck.position, edgeCheckRadius, GroundLayers))
+            {
+                rb.velocity = Vector2.zero;
+                Flip();
             }
         }
+    }
+    Vector2 GetForwardVector2()
+    {
+        Vector2 forwardVector = edgeCheck.position - transform.position;
+        forwardVector = new Vector2(forwardVector.x, 0);
+        forwardVector.Normalize();
+
+        return forwardVector;
+    }
+    void Flip()
+    {
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
     void OnDrawGizmos()
     {
