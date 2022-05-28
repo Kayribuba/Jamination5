@@ -40,7 +40,7 @@ public class WolfDrag : MonoBehaviour
     Vector3 startPoint;
     Vector3 endPoint;
 
-    bool isFacingLeft;
+    public bool isFacingLeft;
 
     private void Start()
     {
@@ -162,6 +162,7 @@ public class WolfDrag : MonoBehaviour
                 wwcont.score += 10;
             }
             wwcont.RefreshScore();
+            wolfAttackPoint.GetComponent<Animator>().SetTrigger("Bite");
         }
         hitEnemies = null;
     }

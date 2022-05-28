@@ -59,6 +59,9 @@ public class TurnManager : MonoBehaviour
         X5.enabled = false;
         GetComponent<Rigidbody2D>().drag = 0;
         slider.value = maxTime;
+
+        if (wDrag.isFacingLeft)
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
     public void ChangeType()
     {
