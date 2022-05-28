@@ -15,11 +15,11 @@ public class PreyScript : MonoBehaviour
 
     public void Die()
     {
-        //GEÇÝCÝ
-        transform.Find("Sprite").GetComponent<SpriteRenderer>().color = Color.red;
+        //GEï¿½ï¿½Cï¿½
+        transform.Find("Sprite").GetComponent<SpriteRenderer>().color = Color.green;
         GetComponent<CapsuleCollider2D>().enabled = false;
         Destroy(GetComponent<Rigidbody2D>());
         this.enabled = false;
-        //GEÇÝCÝ
+        //GEï¿½ï¿½Cï¿½
     }
 }
