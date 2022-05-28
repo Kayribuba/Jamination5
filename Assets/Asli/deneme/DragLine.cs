@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DragLine : MonoBehaviour
 {
-    public LineRenderer lr;
+    LineRenderer lr;
 
     private void Awake()
     {

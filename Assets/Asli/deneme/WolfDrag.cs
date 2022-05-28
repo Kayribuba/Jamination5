@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class WolfDrag : MonoBehaviour
 {
+    public GameObject magenta;
+
     public Transform groundCheckTransform;
-    public Transform foot;
-    public float groundCheckRadius = .5f;
+    public float groundCheckRadius = .26f;
     public LayerMask groundLayerMask;
-    public bool isGrounded = false;
-    public bool wasGrounded = false;
+    bool isGrounded = false;
+    bool wasGrounded = false;
     public float rayLength = .5f;
 
-    public bool didFall = false;
-    public float fallSpeed = 100f;
+    bool didFall = false;
+    public float fallSpeed = 3f;
 
 
-    public float power = 10f;
+    public float power = 2f;
     public Rigidbody2D rb;
 
     public Vector2 minPower;
@@ -24,6 +25,8 @@ public class WolfDrag : MonoBehaviour
 
     public float normalGravity;
     public float changedGravity = 10f;
+    [Range(0, 100)] public float speedDecelerateOutOf100 = 20;
+    public float dragRadius = 1;
 
     DragLine dl;
 
@@ -43,7 +46,6 @@ public class WolfDrag : MonoBehaviour
 
     private void Update()
     {
-        //RaycastHit2D footHit = Physics2D.Raycast(foot.position, Vector2.down, rayLength, groundLayerMask);
         Collider2D groundCollider = Physics2D.OverlapCircle(groundCheckTransform.position, groundCheckRadius, groundLayerMask);
         isGrounded = groundCollider != null ? true : false;
 
@@ -78,15 +80,23 @@ public class WolfDrag : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isGrounded)
         {
 
-            startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+            startPoint = gameObject.transform.position;
             startPoint.z = 15;
         }
 
         if (Input.GetMouseButton(0) && isGrounded)
         {
-            Vector3 linePos = cam.ScreenToWorldPoint(Input.mousePosition);
-            linePos.z = 15;
-            dl.RenderLine(startPoint, linePos);
+            Vector3 linePos = transform.position + (transform.position - cam.ScreenToWorldPoint(Input.mousePosition)).normalized *
+                Vector2.Distance(transform.position, cam.ScreenToWorldPoint(Input.mousePosition));
+
+            linePos.z = transform.position.z;
+
+            if (Vector2.Distance(transform.position, linePos) > dragRadius)
+            {
+                linePos = transform.position + (transform.position - linePos).normalized * -dragRadius;
+            }
+
+            dl.RenderLine(gameObject.transform.position, linePos);
         }
 
         if (Input.GetMouseButtonUp(0) && isGrounded)
@@ -101,7 +111,7 @@ public class WolfDrag : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space) && !didFall)
         {
-
+            rb.velocity = new Vector2(rb.velocity.x / 100 * speedDecelerateOutOf100, rb.velocity.y);
             rb.gravityScale = normalGravity + changedGravity;
             didFall = true;
         }
