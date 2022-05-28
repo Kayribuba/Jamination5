@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class WerewolfController : MonoBehaviour
 {
+    
     public Slider slider;
     public bool isFacingLeft { get; private set; }
     public bool isGrounded { get; private set; }
@@ -33,8 +34,8 @@ public class WerewolfController : MonoBehaviour
     float coyoteJump = -1;
     float targetAttackTime = float.MinValue;
     float attackUntill = float.MinValue;
-    float maxScore = 12;
-    float minScore = 0;
+    int maxScore = 12;
+    int minScore = 0;
 
     int score = 0;
 
@@ -45,6 +46,7 @@ public class WerewolfController : MonoBehaviour
         defaultGravityScale = rb.gravityScale;
 
         slider.value = minScore;
+        score = minScore;
     }
     void Update()
     {
@@ -141,6 +143,11 @@ public class WerewolfController : MonoBehaviour
             {
                 score += 2;
                 slider.value = score;
+            }
+
+            if(slider.value >= maxScore)
+            {
+                GetComponent<TurnManager>().BecomeWerewolf();
             }
 
             RefreshScore();
