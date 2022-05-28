@@ -124,7 +124,7 @@ public class WerewolfController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && targetAttackTime <= Time.time)
         {
             //animator.SetTrigger("Attack");
-            //attackPoint.GetComponent<Animator>().SetTrigger("Slash");
+            attackPoint.GetComponent<Animator>().SetTrigger("Slash");
 
             targetAttackTime = Time.time + attackCoolDown;
             attackUntill = Time.time + attackDuration;
