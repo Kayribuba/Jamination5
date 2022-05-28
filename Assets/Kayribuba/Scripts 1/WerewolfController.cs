@@ -79,7 +79,7 @@ public class WerewolfController : MonoBehaviour
     
     private void GroundCheckMethod()
     {
-        if (Physics2D.OverlapCircle(GroundCheck.position, 0.37f, GroundLayers))
+        if (Physics2D.OverlapCircle(GroundCheck.position, 0.26f, GroundLayers))
         {
             isGrounded = true;
             coyoteTime = Time.time + 0.05f;
@@ -192,7 +192,7 @@ public class WerewolfController : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(GroundCheck.position, 0.37f);
+        Gizmos.DrawWireSphere(GroundCheck.position, 0.26f);
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
