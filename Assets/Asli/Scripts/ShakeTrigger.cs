@@ -8,6 +8,6 @@ public class ShakeTrigger : MonoBehaviour
    
     public void Shake()
     {
-        StartCoroutine(cameraShake.Shake(.1f, .1f));
+        StartCoroutine(cameraShake.Shake(.2f, .2f));
     }
 }
