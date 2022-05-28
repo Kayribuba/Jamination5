@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
+    public GameObject cameraScroll;
     public float z = -10;
     public IEnumerator Shake(float duration, float magnitude)
     {
-        float x = 0;
-        float y = 0;
+        
 
-        Vector3 originalPos = new Vector3(x, y, z);
+        Vector3 changedPos = cameraScroll.transform.position;
 
         float elapsed = 0.0f;
 
@@ -27,7 +27,7 @@ public class CameraShake : MonoBehaviour
 
         }
 
-        transform.localPosition = originalPos;
+        transform.localPosition = changedPos; ;
 
     }
 }
