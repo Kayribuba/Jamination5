@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class WerewolfController : MonoBehaviour
 {
+    public Slider slider;
     public bool isFacingLeft { get; private set; }
     public bool isGrounded { get; private set; }
 
@@ -31,6 +33,8 @@ public class WerewolfController : MonoBehaviour
     float coyoteJump = -1;
     float targetAttackTime = float.MinValue;
     float attackUntill = float.MinValue;
+    float maxScore = 12;
+    float minScore = 0;
 
     int score = 0;
 
@@ -39,6 +43,8 @@ public class WerewolfController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
         defaultGravityScale = rb.gravityScale;
+
+        slider.value = minScore;
     }
     void Update()
     {
@@ -129,10 +135,12 @@ public class WerewolfController : MonoBehaviour
             if (enemyCol.CompareTag(Constants.SlimEnemyTag))
             {
                 score++;
+                slider.value = score;
             }
             else if (enemyCol.CompareTag(Constants.ThickEnemyTag))
             {
                 score += 2;
+                slider.value = score;
             }
 
             RefreshScore();
