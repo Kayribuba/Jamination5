@@ -57,6 +57,7 @@ public class WolfDrag : MonoBehaviour
             isGrounded = true;
             didFall = false;
             rb.gravityScale = normalGravity;
+            animatorWolf.SetBool("Jumped", false);
 
             if (!wasGrounded)
             {
@@ -105,6 +106,8 @@ public class WolfDrag : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && isGrounded && wasButtonDown)
         {
+            animatorWolf.SetBool("Jumped", true);
+
             endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
             endPoint.z = 15;
 

@@ -2316,6 +2316,10 @@ PrefabInstance:
       propertyPath: EditText
       value: 
       objectReference: {fileID: 1175710240}
+    - target: {fileID: 2864115830624965440, guid: 9e416f51592beab45991d6a4a98d5661, type: 3}
+      propertyPath: editorModeIsOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2864115830624965441, guid: 9e416f51592beab45991d6a4a98d5661, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2393,6 +2397,10 @@ PrefabInstance:
       propertyPath: humanSkin
       value: 
       objectReference: {fileID: 5099180702072121857}
+    - target: {fileID: 5042586316408219668, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5099180700587954267, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2457,6 +2465,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5099180701752377241, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5099180700587954271, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
@@ -2481,6 +2493,25 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 0dbba4eef76af5d42a51a143aa33a92a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &5099180702072121860
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099180702072121858}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 568a94bc818d6ca4b8ee4672495cc921, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
