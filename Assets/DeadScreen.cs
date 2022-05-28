@@ -22,7 +22,7 @@ public class DeadScreen : MonoBehaviour
         if (isDead)
         {
             Dead();
-            player.SetActive(false);
+            
 
         }
     }
@@ -34,17 +34,18 @@ public class DeadScreen : MonoBehaviour
         Time.timeScale = 0.0f;
         deadMenu.SetActive(true);
         hs.SetActive(true);
+        player.SetActive(false);
 
-        
     }
 
     public void Restart()
     {
         Time.timeScale = 1f;
         deadMenu.SetActive(false);
+        hs.SetActive(false);
         player.SetActive(true);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         
     }
 
