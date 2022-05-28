@@ -29,7 +29,8 @@ public class TurnManager : MonoBehaviour
     private void Start()
     {
         wb.SetActive(false);
-        slider.value = maxTime;
+        slider.maxValue = maxTime;
+        slider.value = slider.maxValue;
         BecomeHuman();
     }
 
