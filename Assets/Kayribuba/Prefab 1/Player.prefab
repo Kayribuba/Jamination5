@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3078986058155381691}
   - component: {fileID: 715604232260793070}
+  - component: {fileID: 5099180702072121864}
   m_Layer: 6
   m_Name: wolfSprite
   m_TagString: Untagged
@@ -82,6 +83,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5099180702072121864
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5042586316408219668}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 568a94bc818d6ca4b8ee4672495cc921, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5099180700587954267
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +114,6 @@ GameObject:
   - component: {fileID: 2749319413440851805}
   - component: {fileID: 5099180700587954269}
   - component: {fileID: 5099180700587954268}
-  - component: {fileID: 5099180700587954271}
   - component: {fileID: 5099180700587954272}
   - component: {fileID: 5099180702072121859}
   - component: {fileID: 5099180702072121860}
@@ -137,11 +156,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0765f49a38309b04781d5e790e9c8ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 0}
+  wb: {fileID: 0}
+  st: {fileID: 0}
+  wolfSkin: {fileID: 5042586316408219668}
+  humanSkin: {fileID: 5099180701752377241}
   isWerewolf: 0
   wwController: {fileID: 5099180700587954269}
   wDrag: {fileID: 5099180702072121860}
   DL: {fileID: 5099180702072121861}
   LR: {fileID: 5099180702072121859}
+  maxTime: 10
 --- !u!114 &5099180700587954269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 0}
+  kb: {fileID: 0}
   playerSpeed: 15
   jumpForce: 35
   fallingAccelerationIntensity: 5
@@ -172,6 +198,8 @@ MonoBehaviour:
   attackPoint: {fileID: 5099180700824242955}
   corePoint: {fileID: 5099180701639759389}
   ScoreText: {fileID: 0}
+  maxScore: 12
+  score: 0
 --- !u!70 &5099180700587954268
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -188,25 +216,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.05943942, y: -0.08544445}
   m_Size: {x: 0.76421976, y: 2.7208734}
   m_Direction: 0
---- !u!95 &5099180700587954271
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5099180700587954267}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4fcb1fce41bdc83489405eaab49a171f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &5099180700587954272
 Rigidbody2D:
   serializedVersion: 4
@@ -351,6 +360,7 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  wasButtonDown: 0
   rayLength: 0.5
   fallSpeed: 3
   power: 7
@@ -473,6 +483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5099180701752377242}
   - component: {fileID: 5099180701752377243}
+  - component: {fileID: 2604979941137167268}
   m_Layer: 6
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -545,3 +556,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2604979941137167268
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099180701752377241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0dbba4eef76af5d42a51a143aa33a92a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wolf_Jump
+  m_Name: Thick_Death
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,12 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 2129270529700640093, guid: 65950d0d7b624f04b8bdde4c5463d871, type: 3}
+      value: {fileID: -4639390364304729238, guid: fea8e6e919d77b94b8b7bd0b34614b32, type: 3}
+    - time: 0.125
+      value: {fileID: -4297427381592644239, guid: 2bd96b8225519884a87ceda431c81103, type: 3}
+    - time: 0.25
+      value: {fileID: -379731413631691251, guid: 472886d20ee7a434cb7b8ecc93cd2256, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 1
+  m_SampleRate: 8
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -40,13 +44,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 2129270529700640093, guid: 65950d0d7b624f04b8bdde4c5463d871, type: 3}
+    - {fileID: -4639390364304729238, guid: fea8e6e919d77b94b8b7bd0b34614b32, type: 3}
+    - {fileID: -4297427381592644239, guid: 2bd96b8225519884a87ceda431c81103, type: 3}
+    - {fileID: -379731413631691251, guid: 472886d20ee7a434cb7b8ecc93cd2256, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 0.375
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

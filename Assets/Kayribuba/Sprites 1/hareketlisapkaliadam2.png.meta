@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 4e5bcfa3917118f4eba16d8ac2694ba2
+guid: 8ccb977ae2fd5864288cd50a76ee07f3
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5676084632056332677
+    second: hareketlisapkaliadam2_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +104,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: hareketlisapkaliadam2_0
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 3
+        width: 55
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e7a3fa91f7a31b0800000000000000
+      internalID: -5676084632056332677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

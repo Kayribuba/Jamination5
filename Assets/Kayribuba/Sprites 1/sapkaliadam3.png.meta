@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 4e5bcfa3917118f4eba16d8ac2694ba2
+guid: 472886d20ee7a434cb7b8ecc93cd2256
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -379731413631691251
+    second: sapkaliadam3_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +104,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: sapkaliadam3_0
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 13
+        width: 119
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5, y: 1.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d061d6c8a4ceabaf0800000000000000
+      internalID: -379731413631691251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

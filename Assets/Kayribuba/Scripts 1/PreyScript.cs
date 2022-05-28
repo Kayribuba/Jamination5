@@ -14,6 +14,8 @@ public class PreyScript : MonoBehaviour
     float changeBehaviorAt = float.MaxValue;
     bool changeAgain = true;
     Rigidbody2D rb;
+    Animator animator;
+    //bool isSlim;
 
 
     void Start()
@@ -23,6 +25,9 @@ public class PreyScript : MonoBehaviour
             currentState = PreyState.Idle;
         else
             currentState = PreyState.Walk;
+
+        //isSlim = gameObject.tag == Constants.SlimEnemyTag;
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -50,21 +55,21 @@ public class PreyScript : MonoBehaviour
 
     public void Die()
     {
-        //GE��C�
-        transform.Find("Sprite").GetComponent<SpriteRenderer>().color = Color.green;
+        animator.SetBool("Die", true);
         GetComponent<CapsuleCollider2D>().enabled = false;
         Destroy(rb);
         this.enabled = false;
-        //GE��C�
     }
     void DoStates()
     {
         if(currentState == PreyState.Idle)
         {
             rb.velocity = Vector2.zero;
+            animator.SetBool("Walk", false);
         }
         else if (currentState == PreyState.Walk)
         {
+            animator.SetBool("Walk", true);
             Vector2 forwardVector = GetForwardVector2();
 
             rb.velocity = new Vector2(forwardVector.x * speed, rb.velocity.y);
