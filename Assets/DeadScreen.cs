@@ -22,8 +22,6 @@ public class DeadScreen : MonoBehaviour
         if (isDead)
         {
             Dead();
-            
-
         }
     }
 
@@ -31,7 +29,7 @@ public class DeadScreen : MonoBehaviour
     private void Dead()
     {
         isDead = true;
-        
+
         deadMenu.SetActive(true);
         hs.SetActive(true);
         player.SetActive(false);
@@ -40,13 +38,13 @@ public class DeadScreen : MonoBehaviour
 
     public void Restart()
     {
-        
+
         deadMenu.SetActive(false);
         hs.SetActive(false);
         player.SetActive(true);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
+
     }
 
     public void Quit()

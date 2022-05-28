@@ -16,15 +16,14 @@ public class CameraShake : MonoBehaviour
 
         while (elapsed < duration)
         {
-            float xShake = Random.Range(-1f, 1f) * magnitude;
-            float yShake = Random.Range(-1f, 1f) * magnitude;
+            float xShake = Random.Range(-5f, 5f) * magnitude;
+            float yShake = Random.Range(-5f, 5f) * magnitude;
 
             transform.localPosition = new Vector3(xShake, yShake, z);
 
             elapsed += Time.deltaTime;
 
             yield return null;
-
         }
 
         transform.localPosition = changedPos; ;
