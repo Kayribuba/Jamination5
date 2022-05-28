@@ -14,7 +14,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField] DragLine DL;
     [SerializeField] LineRenderer LR;
 
-    public float maxTime = 1;
+    public float maxTime = 3;
 
     void Update()
     {
@@ -34,8 +34,6 @@ public class TurnManager : MonoBehaviour
         wDrag.enabled = true;
         DL.enabled = true;
         LR.enabled = true;
-
-        
     }
     public void BecomeHuman()
     {
@@ -45,6 +43,7 @@ public class TurnManager : MonoBehaviour
         DL.enabled = false;
         LR.enabled = false;
         GetComponent<Rigidbody2D>().drag = 0;
+        slider.value = maxTime;
     }
     public void ChangeType()
     {

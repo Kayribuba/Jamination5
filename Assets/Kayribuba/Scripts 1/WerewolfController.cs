@@ -39,7 +39,7 @@ public class WerewolfController : MonoBehaviour
     
     public float maxScore = 12;
     float minScore = 0;
-    float score = 0;
+    public float score = 0;
     
 
     void Start()
@@ -158,7 +158,7 @@ public class WerewolfController : MonoBehaviour
             if(slider.value >= maxScore)
             {
                 GetComponent<TurnManager>().BecomeWerewolf();
-                slider.value = minScore;
+                slider.value = 0;
                 kb.SetActive(false);
             }
             else

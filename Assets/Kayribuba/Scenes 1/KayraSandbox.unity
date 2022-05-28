@@ -1940,6 +1940,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1962795288}
+    - target: {fileID: 2749319413440851805, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
+      propertyPath: maxTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5099180700587954267, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1952,6 +1956,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 27442227}
+    - target: {fileID: 5099180700587954269, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
+      propertyPath: maxScore
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5099180700587954269, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
       propertyPath: ScoreText
       value: 
@@ -2212,11 +2220,19 @@ PrefabInstance:
       value: Kill Bar
       objectReference: {fileID: 0}
     - target: {fileID: 8318156009574665893, guid: 26bd72e3bc7f95941b4e0fb275bfacba, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318156009574665893, guid: 26bd72e3bc7f95941b4e0fb275bfacba, type: 3}
       propertyPath: m_MaxValue
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8318156009574665893, guid: 26bd72e3bc7f95941b4e0fb275bfacba, type: 3}
       propertyPath: m_WholeNumbers
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318156009919244634, guid: 26bd72e3bc7f95941b4e0fb275bfacba, type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8318156009919244634, guid: 26bd72e3bc7f95941b4e0fb275bfacba, type: 3}
