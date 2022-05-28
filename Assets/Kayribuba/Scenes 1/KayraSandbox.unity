@@ -430,6 +430,66 @@ Transform:
   m_Father: {fileID: 1855080085}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &64954533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 64954534}
+  m_Layer: 7
+  m_Name: EdgeCheck (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &64954534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64954533}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6910019, y: -1.2139997, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1469264965}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &139223379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 139223380}
+  m_Layer: 7
+  m_Name: EdgeCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &139223380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139223379}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6910019, y: -1.2139997, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 975195309}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &189380022 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9037713537628190961, guid: 354eb2c1bb2563d4f8906a6440815945, type: 3}
@@ -441,6 +501,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &190202295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 190202296}
+  m_Layer: 7
+  m_Name: EdgeCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &190202296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190202295}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.691, y: -1.214, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1514472857}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &193033470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -448,6 +538,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2066245394}
     m_Modifications:
+    - target: {fileID: 6736388758600535651, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
+      propertyPath: edgeCheck
+      value: 
+      objectReference: {fileID: 2011313407}
+    - target: {fileID: 6736388758600535651, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
+      propertyPath: edgeCheckRadius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736388758600535651, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
+      propertyPath: GroundLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 6736388758600535678, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -862,6 +964,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6736388758600535678, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
   m_PrefabInstance: {fileID: 6736388759172503027}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &606756079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 606756080}
+  m_Layer: 7
+  m_Name: EdgeCheck (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &606756080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606756079}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.542, y: -1.198, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 574135181}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &633937806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1215,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2066245394}
     m_Modifications:
+    - target: {fileID: 5909005983290561636, guid: 1ad2943a795f7044aa4eeea710b15703, type: 3}
+      propertyPath: edgeCheck
+      value: 
+      objectReference: {fileID: 190202296}
+    - target: {fileID: 5909005983290561636, guid: 1ad2943a795f7044aa4eeea710b15703, type: 3}
+      propertyPath: edgeCheckRadius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909005983290561636, guid: 1ad2943a795f7044aa4eeea710b15703, type: 3}
+      propertyPath: GroundLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5909005983290561656, guid: 1ad2943a795f7044aa4eeea710b15703, type: 3}
       propertyPath: m_Name
       value: SlimEnemy (2)
@@ -1468,6 +1612,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2066245394}
     m_Modifications:
+    - target: {fileID: 5909005983290561636, guid: 1ad2943a795f7044aa4eeea710b15703, type: 3}
+      propertyPath: edgeCheck
+      value: 
+      objectReference: {fileID: 64954534}
+    - target: {fileID: 5909005983290561636, guid: 1ad2943a795f7044aa4eeea710b15703, type: 3}
+      propertyPath: edgeCheckRadius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909005983290561636, guid: 1ad2943a795f7044aa4eeea710b15703, type: 3}
+      propertyPath: GroundLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5909005983290561656, guid: 1ad2943a795f7044aa4eeea710b15703, type: 3}
       propertyPath: m_Name
       value: SlimEnemy (1)
@@ -1756,6 +1912,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960598475}
   m_CullTransparentMesh: 1
+--- !u!1 &2011313406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011313407}
+  m_Layer: 7
+  m_Name: EdgeCheck (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2011313407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011313406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5419998, y: -1.198, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1575062641}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2066245393
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,6 +2219,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2066245394}
     m_Modifications:
+    - target: {fileID: 5909005983290561636, guid: 1ad2943a795f7044aa4eeea710b15703, type: 3}
+      propertyPath: edgeCheck
+      value: 
+      objectReference: {fileID: 139223380}
+    - target: {fileID: 5909005983290561636, guid: 1ad2943a795f7044aa4eeea710b15703, type: 3}
+      propertyPath: edgeCheckRadius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909005983290561636, guid: 1ad2943a795f7044aa4eeea710b15703, type: 3}
+      propertyPath: GroundLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5909005983290561656, guid: 1ad2943a795f7044aa4eeea710b15703, type: 3}
       propertyPath: m_Name
       value: SlimEnemy
@@ -2090,6 +2288,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2066245394}
     m_Modifications:
+    - target: {fileID: 6736388758600535651, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
+      propertyPath: edgeCheck
+      value: 
+      objectReference: {fileID: 606756080}
+    - target: {fileID: 6736388758600535651, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
+      propertyPath: edgeCheckRadius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736388758600535651, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
+      propertyPath: GroundLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 6736388758600535678, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
       propertyPath: m_RootOrder
       value: 1
