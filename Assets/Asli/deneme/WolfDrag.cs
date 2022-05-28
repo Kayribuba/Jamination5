@@ -5,10 +5,13 @@ using UnityEngine;
 public class WolfDrag : MonoBehaviour
 {
     public GameObject magenta;
-
+    WerewolfController wwcont;
     public Transform groundCheckTransform;
+    public Transform wolfAttackPoint;
+    public float wolfAttackRadius = 1f;
     public float groundCheckRadius = .26f;
     public LayerMask groundLayerMask;
+    public LayerMask enemyLayerMask;
     public bool wasButtonDown;
     bool isGrounded = false;
     bool wasGrounded = false;
@@ -37,12 +40,14 @@ public class WolfDrag : MonoBehaviour
     Vector3 startPoint;
     Vector3 endPoint;
 
+    bool isFacingLeft;
+
     private void Start()
     {
         cam = Camera.main;
         dl = GetComponent<DragLine>();
         animatorWolf = transform.Find("wolfSprite").GetComponent<Animator>();
-
+        wwcont = GetComponent<WerewolfController>();
         normalGravity = rb.gravityScale;
 
     }
@@ -122,11 +127,56 @@ public class WolfDrag : MonoBehaviour
             rb.gravityScale = normalGravity + changedGravity;
             didFall = true;
         }
+        if(Input.GetKeyDown(KeyCode.D))
+        {
+            if (isFacingLeft)
+                Flip();
+            WolfAttack();
+        }
+        else if(Input.GetKeyDown(KeyCode.A))
+        {
+            if (!isFacingLeft)
+                Flip();
+            WolfAttack();
+        }
     }
+    void WolfAttack()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(wolfAttackPoint.position, wolfAttackRadius, enemyLayerMask);
+        foreach (Collider2D enemyCol in hitEnemies)
+        {
+            if (enemyCol.GetComponent<PreyScript>() == null)
+            {
+                Debug.Log("Enemy has no PreyScript :(");
+                break;
+            }
 
-    private void OnDrawGizmos()
+            enemyCol.GetComponent<PreyScript>().Die();
+
+            if (enemyCol.CompareTag(Constants.SlimEnemyTag))
+            {
+                wwcont.score += 5;
+            }
+            else if (enemyCol.CompareTag(Constants.ThickEnemyTag))
+            {
+                wwcont.score += 10;
+            }
+            wwcont.RefreshScore();
+        }
+        hitEnemies = null;
+    }
+    void Flip()
+    {
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            isFacingLeft = !isFacingLeft;
+    }
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheckTransform.position, groundCheckRadius);
+
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(wolfAttackPoint.position, wolfAttackRadius);
+
     }
 }

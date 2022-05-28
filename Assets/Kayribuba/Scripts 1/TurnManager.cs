@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TurnManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class TurnManager : MonoBehaviour
 
     [SerializeField] GameObject wolfSkin;
     [SerializeField] GameObject humanSkin;
+    [SerializeField] TextMeshProUGUI X5;
     
     public bool isWerewolf;
     [SerializeField] WerewolfController wwController;
@@ -41,6 +43,7 @@ public class TurnManager : MonoBehaviour
         wDrag.wasButtonDown = false;
         humanSkin.SetActive(false);
         wolfSkin.SetActive(true);
+        X5.enabled = true;
         st.Shake();
     }
     public void BecomeHuman()
@@ -52,6 +55,7 @@ public class TurnManager : MonoBehaviour
         LR.enabled = false;
         humanSkin.SetActive(true);
         wolfSkin.SetActive(false);
+        X5.enabled = false;
         GetComponent<Rigidbody2D>().drag = 0;
         slider.value = maxTime;
     }

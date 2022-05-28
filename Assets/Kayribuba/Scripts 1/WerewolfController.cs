@@ -175,7 +175,7 @@ public class WerewolfController : MonoBehaviour
         }
         hitEnemies = null;
     }
-    void RefreshScore()
+    public void RefreshScore()
     {
         ScoreText.text = score.ToString();
     }
