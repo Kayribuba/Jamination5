@@ -28,7 +28,7 @@ public class WerewolfController : MonoBehaviour
     [SerializeField] TextMeshProUGUI ScoreText;
     
     Rigidbody2D rb;
-    Animator animator;
+    Animator animatorHuman;
 
     float mx;
     float defaultGravityScale;
@@ -48,6 +48,7 @@ public class WerewolfController : MonoBehaviour
         //animator = GetComponent<Animator>();
         defaultGravityScale = rb.gravityScale;
         kb.SetActive(true);
+        animatorHuman = transform.Find("PlayerSprite").GetComponent<Animator>();
 
         score = minScore;
         slider.value = score;
@@ -56,7 +57,13 @@ public class WerewolfController : MonoBehaviour
     {
         kb.SetActive(true);
         mx = Input.GetAxisRaw("Horizontal");
-        //animator.SetFloat("Movement", Mathf.Abs(mx));
+        if(!isGrounded)
+        {
+            animatorHuman.SetBool("HasJumped", true);
+            animatorHuman.SetFloat("Speed", 0);
+        }
+        else
+        animatorHuman.SetFloat("Speed", Mathf.Abs(mx));
 
         CheckFlipNeed();
 
@@ -76,7 +83,7 @@ public class WerewolfController : MonoBehaviour
         {
             isGrounded = true;
             coyoteTime = Time.time + 0.05f;
-            //animator.SetTrigger("Grounded");
+            animatorHuman.SetBool("HasJumped", false);
         }
         else if (coyoteTime >= Time.time)
         {
@@ -96,7 +103,7 @@ public class WerewolfController : MonoBehaviour
         {
             coyoteJump = -1;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            //animator.SetTrigger("Jumped");
+            animatorHuman.SetBool("HasJumped", true);
         }
         else if (rb.velocity.y > 0 && Input.GetButtonUp("Jump"))
         {

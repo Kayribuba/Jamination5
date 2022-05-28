@@ -30,6 +30,7 @@ public class WolfDrag : MonoBehaviour
     public float dragRadius = 1;
 
     DragLine dl;
+    Animator animatorWolf;
 
     Camera cam;
     Vector2 force;
@@ -40,6 +41,7 @@ public class WolfDrag : MonoBehaviour
     {
         cam = Camera.main;
         dl = GetComponent<DragLine>();
+        animatorWolf = transform.Find("wolfSprite").GetComponent<Animator>();
 
         normalGravity = rb.gravityScale;
 
