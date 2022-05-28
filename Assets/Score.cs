@@ -26,7 +26,7 @@ public class Score : MonoBehaviour
         score = wwController.score;
         scoreText.text = score.ToString();
 
-        if (score > highScore)
+        if (score > PlayerPrefs.GetFloat("highScore"))
         {
             PlayerPrefs.SetFloat("highScore", score);
             highscoreText.text = wwController.score.ToString();
