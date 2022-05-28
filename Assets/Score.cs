@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
@@ -15,19 +16,20 @@ public class Score : MonoBehaviour
 
     void Start()
     {
-        score = wwController.score;
+        
         highscoreText.text = PlayerPrefs.GetFloat("highScore").ToString();
     }
 
 
     void Update()
     {
-        scoreText.text = wwController.score.ToString();
+        score = wwController.score;
+        scoreText.text = score.ToString();
 
         if (score > PlayerPrefs.GetFloat("highScore"))
         {
             PlayerPrefs.SetFloat("highScore", score);
-            highscoreText.text = PlayerPrefs.GetFloat("highScore").ToString();
+            highscoreText.text = wwController.score.ToString();
         }
 
     }
