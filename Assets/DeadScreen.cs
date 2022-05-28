@@ -31,7 +31,7 @@ public class DeadScreen : MonoBehaviour
     private void Dead()
     {
         isDead = true;
-        Time.timeScale = 0.0f;
+        
         deadMenu.SetActive(true);
         hs.SetActive(true);
         player.SetActive(false);
@@ -40,7 +40,7 @@ public class DeadScreen : MonoBehaviour
 
     public void Restart()
     {
-        Time.timeScale = 1f;
+        
         deadMenu.SetActive(false);
         hs.SetActive(false);
         player.SetActive(true);
