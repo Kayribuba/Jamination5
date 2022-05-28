@@ -8,8 +8,10 @@ public class WerewolfController : MonoBehaviour
 {
     
     public Slider slider;
+    public GameObject kb;
     public bool isFacingLeft { get; private set; }
     public bool isGrounded { get; private set; }
+
 
     [SerializeField] float playerSpeed = 15f;
     [SerializeField] float jumpForce = 25f;
@@ -34,10 +36,11 @@ public class WerewolfController : MonoBehaviour
     float coyoteJump = -1;
     float targetAttackTime = float.MinValue;
     float attackUntill = float.MinValue;
-    int maxScore = 12;
-    int minScore = 0;
-
-    int score = 0;
+    
+    public float maxScore = 5;
+    float minScore = 0;
+    float score = 0;
+    
 
     void Start()
     {
@@ -45,8 +48,9 @@ public class WerewolfController : MonoBehaviour
         //animator = GetComponent<Animator>();
         defaultGravityScale = rb.gravityScale;
 
-        slider.value = minScore;
+
         score = minScore;
+        slider.value = score;
     }
     void Update()
     {
@@ -61,7 +65,9 @@ public class WerewolfController : MonoBehaviour
         JumpCheck();
         Attack();
         DamageThings();
+       
     }
+   
     
     private void GroundCheckMethod()
     {
@@ -137,20 +143,23 @@ public class WerewolfController : MonoBehaviour
             if (enemyCol.CompareTag(Constants.SlimEnemyTag))
             {
                 score++;
-                slider.value = score;
+                if (!GetComponent<TurnManager>().isWerewolf)
+                    slider.value++;
             }
             else if (enemyCol.CompareTag(Constants.ThickEnemyTag))
             {
                 score += 2;
-                slider.value = score;
+                if (!GetComponent<TurnManager>().isWerewolf)
+                    slider.value += 2;
             }
+            RefreshScore();
 
             if(slider.value >= maxScore)
             {
                 GetComponent<TurnManager>().BecomeWerewolf();
+                slider.value = minScore;
+                kb.SetActive(false);
             }
-
-            RefreshScore();
         }
         hitEnemies = null;
     }
