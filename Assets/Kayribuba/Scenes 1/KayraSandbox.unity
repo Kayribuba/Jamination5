@@ -395,11 +395,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6736388758600535678, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.249998
+      value: 18.62
       objectReference: {fileID: 0}
     - target: {fileID: 6736388758600535678, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.74
+      value: 8.04
       objectReference: {fileID: 0}
     - target: {fileID: 6736388758600535678, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1891,11 +1891,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6736388758600535678, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.34
+      value: 18.09
       objectReference: {fileID: 0}
     - target: {fileID: 6736388758600535678, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.67
+      value: 7.93
       objectReference: {fileID: 0}
     - target: {fileID: 6736388758600535678, guid: b1e6ffe01a03a9b48b83f80251e0a749, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2383,7 +2383,7 @@ PrefabInstance:
       objectReference: {fileID: 1962795288}
     - target: {fileID: 2749319413440851805, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
       propertyPath: maxTime
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2749319413440851805, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
       propertyPath: wolfSkin
@@ -2457,7 +2457,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5099180700587954271, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
 --- !u!1 &5099180702072121857 stripped
 GameObject:
@@ -2469,6 +2470,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5042586316408219668, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
   m_PrefabInstance: {fileID: 5099180702072121856}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &5099180702072121859
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099180702072121857}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0dbba4eef76af5d42a51a143aa33a92a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5909005982650947796
 PrefabInstance:
   m_ObjectHideFlags: 0

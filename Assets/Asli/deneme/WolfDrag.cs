@@ -9,6 +9,7 @@ public class WolfDrag : MonoBehaviour
     public Transform groundCheckTransform;
     public float groundCheckRadius = .26f;
     public LayerMask groundLayerMask;
+    public bool wasButtonDown;
     bool isGrounded = false;
     bool wasGrounded = false;
     public float rayLength = .5f;
@@ -82,9 +83,10 @@ public class WolfDrag : MonoBehaviour
 
             startPoint = gameObject.transform.position;
             startPoint.z = 15;
+            wasButtonDown = true;
         }
 
-        if (Input.GetMouseButton(0) && isGrounded)
+        if (Input.GetMouseButton(0) && isGrounded && wasButtonDown)
         {
             Vector3 linePos = transform.position + (transform.position - cam.ScreenToWorldPoint(Input.mousePosition)).normalized *
                 Vector2.Distance(transform.position, cam.ScreenToWorldPoint(Input.mousePosition));
@@ -99,7 +101,7 @@ public class WolfDrag : MonoBehaviour
             dl.RenderLine(gameObject.transform.position, linePos);
         }
 
-        if (Input.GetMouseButtonUp(0) && isGrounded)
+        if (Input.GetMouseButtonUp(0) && isGrounded && wasButtonDown)
         {
             endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
             endPoint.z = 15;

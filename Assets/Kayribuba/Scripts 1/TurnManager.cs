@@ -37,6 +37,7 @@ public class TurnManager : MonoBehaviour
         wDrag.enabled = true;
         DL.enabled = true;
         LR.enabled = true;
+        wDrag.wasButtonDown = false;
         humanSkin.SetActive(false);
         wolfSkin.SetActive(true);
     }
