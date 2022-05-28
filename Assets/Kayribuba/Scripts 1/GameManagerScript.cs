@@ -6,8 +6,8 @@ using TMPro;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public TextMeshProUGUI EditText;
-    bool editorModeIsOn;
+    [SerializeField] TextMeshProUGUI EditText;
+    [SerializeField] bool editorModeIsOn;
 
     void Update()
     {

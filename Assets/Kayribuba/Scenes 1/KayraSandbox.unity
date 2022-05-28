@@ -1572,6 +1572,10 @@ PrefabInstance:
       propertyPath: EditText
       value: 
       objectReference: {fileID: 1175710240}
+    - target: {fileID: 2864115830624965440, guid: 9e416f51592beab45991d6a4a98d5661, type: 3}
+      propertyPath: editorModeIsOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2864115830624965441, guid: 9e416f51592beab45991d6a4a98d5661, type: 3}
       propertyPath: m_RootOrder
       value: 0
