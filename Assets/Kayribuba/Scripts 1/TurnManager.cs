@@ -7,6 +7,7 @@ public class TurnManager : MonoBehaviour
 {
     public Slider slider;
     public GameObject wb;
+    public ShakeTrigger st;
 
     [SerializeField] GameObject wolfSkin;
     [SerializeField] GameObject humanSkin;
@@ -40,6 +41,7 @@ public class TurnManager : MonoBehaviour
         wDrag.wasButtonDown = false;
         humanSkin.SetActive(false);
         wolfSkin.SetActive(true);
+        st.Shake();
     }
     public void BecomeHuman()
     {
