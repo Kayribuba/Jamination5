@@ -111,7 +111,7 @@ public class WolfDrag : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space) && !didFall)
         {
-            rb.velocity = new Vector2(rb.velocity.x / 100 * speedDecelerateOutOf100, rb.velocity.y);
+            rb.velocity = new Vector2(rb.velocity.x / 100 * speedDecelerateOutOf100, rb.velocity.y - 5);
             rb.gravityScale = normalGravity + changedGravity;
             didFall = true;
         }

@@ -24,7 +24,11 @@ public class GameManagerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && editorModeIsOn)
         {
-            FindObjectOfType<GameManagerScript>().ReloadLevel();
+            ReloadLevel();
+        }
+        if(Input.GetKeyDown(KeyCode.T) && editorModeIsOn)
+        {
+            FindObjectOfType<TurnManager>().ChangeType();
         }
     }
 
