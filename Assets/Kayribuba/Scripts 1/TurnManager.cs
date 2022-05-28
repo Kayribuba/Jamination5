@@ -7,6 +7,9 @@ public class TurnManager : MonoBehaviour
 {
     public Slider slider;
     public GameObject wb;
+
+    [SerializeField] GameObject wolfSkin;
+    [SerializeField] GameObject humanSkin;
     
     public bool isWerewolf;
     [SerializeField] WerewolfController wwController;
@@ -34,6 +37,8 @@ public class TurnManager : MonoBehaviour
         wDrag.enabled = true;
         DL.enabled = true;
         LR.enabled = true;
+        humanSkin.SetActive(false);
+        wolfSkin.SetActive(true);
     }
     public void BecomeHuman()
     {
@@ -42,6 +47,8 @@ public class TurnManager : MonoBehaviour
         wDrag.enabled = false;
         DL.enabled = false;
         LR.enabled = false;
+        humanSkin.SetActive(true);
+        wolfSkin.SetActive(false);
         GetComponent<Rigidbody2D>().drag = 0;
         slider.value = maxTime;
     }
