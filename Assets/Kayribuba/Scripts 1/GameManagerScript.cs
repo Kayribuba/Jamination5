@@ -40,10 +40,11 @@ public class GameManagerScript : MonoBehaviour
         Destroy(lastCourse.gameObject);
         lastCourse = currentCourse;
 
-        GameObject CourseToSpawn = Courses[Mathf.RoundToInt(Random.Range(0, Courses.Length))];
+        GameObject CourseToSpawn = Courses[Random.Range(0, Courses.Length)];
 
         Vector3 spawnPoint = cam.transform.position;
         spawnPoint.x += interval;
+        spawnPoint.z = 0;
         currentCourse = Instantiate(CourseToSpawn, spawnPoint, Quaternion.identity);
 
     }

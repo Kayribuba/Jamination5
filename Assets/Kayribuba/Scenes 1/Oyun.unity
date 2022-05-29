@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acc: 0.02
   speedModifier: 0.05
-  speed: 0.7
+  speed: 2
 --- !u!20 &231731101
 Camera:
   m_ObjectHideFlags: 0
@@ -463,15 +463,15 @@ PrefabInstance:
     - target: {fileID: 2864115830624965440, guid: 9e416f51592beab45991d6a4a98d5661, type: 3}
       propertyPath: Courses.Array.data[0]
       value: 
-      objectReference: {fileID: 5285982950014580273, guid: b2ea58dadd0c32b4aa97726ded63a027, type: 3}
+      objectReference: {fileID: 1546667044242822500, guid: fbac03632c5b72f47a25c139ae134c46, type: 3}
     - target: {fileID: 2864115830624965440, guid: 9e416f51592beab45991d6a4a98d5661, type: 3}
       propertyPath: Courses.Array.data[1]
       value: 
-      objectReference: {fileID: 5820191042226570429, guid: 5f3fe8b6432766348b93eda35f892308, type: 3}
+      objectReference: {fileID: 2090207667960442583, guid: bb648d0b8c35457418d760f77cca0e84, type: 3}
     - target: {fileID: 2864115830624965440, guid: 9e416f51592beab45991d6a4a98d5661, type: 3}
       propertyPath: Courses.Array.data[2]
       value: 
-      objectReference: {fileID: 7227435132784164669, guid: a8fd8c8214ecd654382e04e0d791a88d, type: 3}
+      objectReference: {fileID: 363300734086112865, guid: 2bcdcd662d466c241a7a68cd233fa8b6, type: 3}
     - target: {fileID: 2864115830624965441, guid: 9e416f51592beab45991d6a4a98d5661, type: 3}
       propertyPath: m_RootOrder
       value: 2
