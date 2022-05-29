@@ -8,14 +8,11 @@ public class GameManagerScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI EditText;
     [SerializeField] bool editorModeIsOn;
-    [SerializeField] GameObject Magenta;
-
-    [SerializeField] GameObject platform1;
 
     [Header("AT LEAST 2 COURSES ARE NEEDED")]
     public GameObject[] Courses;
 
-    GameObject lastCourse, currentCourse, nextCourse;
+    GameObject lastCourse, currentCourse;
     Camera cam;
     public float interval = 142;
 

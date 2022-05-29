@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acc: 0.02
   speedModifier: 0.05
-  speed: 2
+  speed: 0.7
 --- !u!20 &231731101
 Camera:
   m_ObjectHideFlags: 0
