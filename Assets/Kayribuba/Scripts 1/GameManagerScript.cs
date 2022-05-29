@@ -8,14 +8,11 @@ public class GameManagerScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI EditText;
     [SerializeField] bool editorModeIsOn;
-    [SerializeField] GameObject Magenta;
-
-    [SerializeField] GameObject platform1;
 
     [Header("AT LEAST 2 COURSES ARE NEEDED")]
     public GameObject[] Courses;
 
-    GameObject lastCourse, currentCourse, nextCourse;
+    GameObject lastCourse, currentCourse;
     Camera cam;
     public float interval = 142;
 
@@ -40,10 +37,11 @@ public class GameManagerScript : MonoBehaviour
         Destroy(lastCourse.gameObject);
         lastCourse = currentCourse;
 
-        GameObject CourseToSpawn = Courses[Mathf.RoundToInt(Random.Range(0, Courses.Length))];
+        GameObject CourseToSpawn = Courses[Random.Range(0, Courses.Length)];
 
         Vector3 spawnPoint = cam.transform.position;
         spawnPoint.x += interval;
+        spawnPoint.z = 0;
         currentCourse = Instantiate(CourseToSpawn, spawnPoint, Quaternion.identity);
 
     }
