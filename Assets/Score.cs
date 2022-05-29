@@ -16,11 +16,10 @@ public class Score : MonoBehaviour
 
     void Start()
     {
-        
+
         highscoreText.text = PlayerPrefs.GetFloat("highScore").ToString();
+
     }
-
-
     void Update()
     {
         score = wwController.score;
