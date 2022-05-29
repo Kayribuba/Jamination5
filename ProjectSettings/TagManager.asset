@@ -54,6 +54,9 @@ TagManager:
   - name: Line Layer
     uniqueID: 1931839839
     locked: 0
+  - name: BeforeForeGround
+    uniqueID: 3490299975
+    locked: 0
   - name: ForeGround
     uniqueID: 2702805185
     locked: 0
