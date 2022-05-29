@@ -36,6 +36,9 @@ public class TurnManager : MonoBehaviour
 
     public void BecomeWerewolf()
     {
+        if (wwController.isFacingLeft)
+            wwController.Flip();
+
         isWerewolf = true;
         wwController.enabled = false;
         wDrag.enabled = true;

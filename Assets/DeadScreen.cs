@@ -10,6 +10,7 @@ public class DeadScreen : MonoBehaviour
     public GameObject deadMenu;
     public GameObject player;
     public GameObject hs;   
+    public GameObject X5;   
 
     private int mainmenu_scene;
 
@@ -37,7 +38,7 @@ public class DeadScreen : MonoBehaviour
         deadMenu.SetActive(true);
         hs.SetActive(true);
         player.SetActive(false);
-
+        X5.SetActive(false);
     }
 
     public void Restart()

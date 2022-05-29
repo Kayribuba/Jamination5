@@ -8,31 +8,10 @@ public class MainMenu : MonoBehaviour
     public GameObject menu;
     public GameObject credits;  
 
-    private int play_scene;
-
-    private void Start()
-    {
-        credits.SetActive(false);
-        play_scene = SceneManager.GetActiveScene().buildIndex + 1;
-    }
-
     public void Play()
     {
-        SceneManager.LoadScene(play_scene);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
-    public void Credits()
-    {
-        credits.SetActive(true);
-        menu.SetActive(false);
-    }
-
-    public void Back()
-    {
-        credits.SetActive(false);
-        menu.SetActive(true);
-    }
-
     public void Quit()
     {
         Application.Quit();     
