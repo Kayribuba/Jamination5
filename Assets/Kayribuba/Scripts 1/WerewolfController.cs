@@ -184,7 +184,7 @@ public class WerewolfController : MonoBehaviour
         if ((mx > 0 && isFacingLeft) || (mx < 0 && !isFacingLeft))
             Flip();
     }
-    void Flip()
+    public void Flip()
     {
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
         isFacingLeft = !isFacingLeft;

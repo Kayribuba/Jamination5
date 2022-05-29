@@ -162,11 +162,11 @@ public class WolfDrag : MonoBehaviour
                 wwcont.score += 10;
             }
             wwcont.RefreshScore();
-            wolfAttackPoint.GetComponent<Animator>().SetTrigger("Bite");
         }
+            wolfAttackPoint.GetComponent<Animator>().SetTrigger("Bite");
         hitEnemies = null;
     }
-    void Flip()
+    public void Flip()
     {
             transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
             isFacingLeft = !isFacingLeft;
