@@ -9,12 +9,16 @@ public class DeadScreen : MonoBehaviour
 
     public GameObject deadMenu;
     public GameObject player;
-    public GameObject hs;
+    public GameObject hs;   
+
+    private int mainmenu_scene;
 
     private void Start()
     {
         deadMenu.SetActive(false);
         hs.SetActive(false);
+
+        mainmenu_scene = SceneManager.GetActiveScene().buildIndex - 1;
     }
 
     void Update()
@@ -47,8 +51,8 @@ public class DeadScreen : MonoBehaviour
 
     }
 
-    public void Quit()
+    public void MainMenu()
     {
-        Application.Quit();
+        SceneManager.LoadScene(mainmenu_scene);
     }
 }
