@@ -8,7 +8,6 @@ public class CameraShake : MonoBehaviour
     public float z = -10;
     public IEnumerator Shake(float duration, float magnitude)
     {
-        
 
         Vector3 changedPos = cameraScroll.transform.position;
 
@@ -19,14 +18,13 @@ public class CameraShake : MonoBehaviour
             float xShake = Random.Range(-5f, 5f) * magnitude;
             float yShake = Random.Range(-5f, 5f) * magnitude;
 
-            transform.localPosition = new Vector3(xShake, yShake, z);
+            transform.localPosition = new Vector3(changedPos.x + xShake, changedPos.y + yShake, z);
 
             elapsed += Time.deltaTime;
 
             yield return null;
         }
 
-        transform.localPosition = changedPos; ;
-
+        transform.localPosition = changedPos;
     }
 }
