@@ -3553,10 +3553,6 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1274511670}
-    - target: {fileID: 2749319413440851805, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
-      propertyPath: maxTime
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5099180700587954267, guid: 34c68ffdbfb51f74384ee8cca5a2ed0c, type: 3}
       propertyPath: m_Name
       value: Player
