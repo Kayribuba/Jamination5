@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CameraScroll : MonoBehaviour
 {
-    public float acc = 1;
-    public float speedModifier = .5f;
-    public float speed = 5;
+    public float acc = .01f;
+    public float speedModifier = .1f;
+    public float speed = .15f;
 
     void Update()
     {

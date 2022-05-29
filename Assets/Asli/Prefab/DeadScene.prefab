@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6353442040217787573}
   - component: {fileID: 6353442040217787572}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Dead_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,7 +536,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6353442040723965451}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6353442040278004123}
+        m_TargetAssemblyTypeName: DeadScreen, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6353442040743553159
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +669,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6353442040743553210}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6353442040278004123}
+        m_TargetAssemblyTypeName: DeadScreen, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6353442040947613249
 GameObject:
   m_ObjectHideFlags: 0
