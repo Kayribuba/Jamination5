@@ -17,6 +17,7 @@ public class GameManagerScript : MonoBehaviour
 
     GameObject lastCourse, currentCourse, nextCourse;
     Camera cam;
+    public float interval = 142;
 
     void Start()
     {
@@ -39,9 +40,11 @@ public class GameManagerScript : MonoBehaviour
         Destroy(lastCourse.gameObject);
         lastCourse = currentCourse;
 
+        GameObject CourseToSpawn = Courses[Mathf.RoundToInt(Random.Range(0, Courses.Length))];
+
         Vector3 spawnPoint = cam.transform.position;
-        spawnPoint.x += 70;
-        currentCourse = Instantiate(Courses[0], spawnPoint, Quaternion.identity);
+        spawnPoint.x += interval;
+        currentCourse = Instantiate(CourseToSpawn, spawnPoint, Quaternion.identity);
 
     }
     void EditorMode()
