@@ -349,6 +349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level3KAYRA
       objectReference: {fileID: 0}
+    - target: {fileID: 363300734086112865, guid: 2bcdcd662d466c241a7a68cd233fa8b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1822626283430423496, guid: 2bcdcd662d466c241a7a68cd233fa8b6, type: 3}
       propertyPath: m_RootOrder
       value: 3
