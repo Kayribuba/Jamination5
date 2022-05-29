@@ -19,39 +19,16 @@ public class GameManagerScript : MonoBehaviour
 
     void Start()
     {
-        currentCourse = platform1;
-        nextCourse = Courses[0];
+
     }
     void Update()
     {
         EditorMode();
-
-        if (Camera.main.transform.position.x >= currentCourse.transform.Find("MiddlePoint").position.x && Camera.main.transform.position.x != 0)
-            SpawnNextCourses();
     }
 
     void SpawnNextCourses()
     {
-        Vector3 lastPointPOS, middlePointPOS, firstPointPOS;
 
-        if (lastCourse != null)
-            Destroy(lastCourse);
-
-        lastCourse = currentCourse;
-        currentCourse = nextCourse;
-
-        if (Courses.Length == 0)
-        {
-            Debug.Log("No course is available");
-            return;
-        }
-
-        nextCourse = Courses[Mathf.RoundToInt(Random.Range(0, Courses.Length - 0.9f))];
-        Vector3 NextCoursePos = currentCourse.transform.Find("LastPoint").position;
-        NextCoursePos.x += (nextCourse.transform.Find("MiddlePoint").transform.position.x - nextCourse.transform.Find("FirstPoint").transform.position.x);
-
-        Instantiate(nextCourse, NextCoursePos, Quaternion.identity);
-        Debug.Log("spawnla");
     }
     void EditorMode()
     {
